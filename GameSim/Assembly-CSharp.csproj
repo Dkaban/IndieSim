@@ -8,8 +8,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <ProjectGuid>{4EE44335-AEA3-04C2-DD33-3A3887621B4E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -64,9 +63,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Code\BillsHandler.cs" />
     <Compile Include="Assets\Code\EnergyHandler.cs" />
     <Compile Include="Assets\Code\GameHandler.cs" />
-    <Compile Include="Assets\Code\HungerHandler.cs" />
+    <Compile Include="Assets\Code\TimeHandler.cs" />
     <Compile Include="Assets\Code\UIHandler.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Dusti/Desktop/Git/GameSim/GameSim/GameSim/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

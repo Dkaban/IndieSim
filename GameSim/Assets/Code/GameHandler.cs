@@ -24,7 +24,7 @@ public class GameHandler : MonoBehaviour
     #endregion
 
     //NEED TO ADD SAVING FOR THIS!
-    private List<Game> CreatedGameList = new List<Game>();
+    private List<Game> _createdGameList = new List<Game>();
 
     public Game CreatedGame;
 
@@ -33,13 +33,13 @@ public class GameHandler : MonoBehaviour
         CreatedGame = new Game();
     }
 
-    public void SetGameName(string name)
+    public void SetGameName(string gameName)
     {
-        CreatedGame.GameName = name;
+        CreatedGame.GameName = gameName;
     }
 
-    public void SetGameGenre(Genre genre)
+    public void SetGameGenre(Genre gameGenre)
     {
-        CreatedGame.GameGenre = genre;
+        CreatedGame.GameGenre = gameGenre;
     }
 }

@@ -14,22 +14,22 @@ public class EnergyHandler : MonoBehaviour
     public Slider EnergyBar;
 
     #region Energy Variables
-    private int _maxEnergy = 100; //In seconds (etc 100 seconds)
+    private const int MaxEnergy = 100; //In seconds (etc 100 seconds)
     private int _currentEnergy = 100;
-    private int _baseEnergyLoss = 1;
-    private float _decreaseRateInSeconds = 5.0f;//Every X seconds, they will lose _baseEnergyLoss amount
+    private const int BaseEnergyLoss = 1;
+    private const float DecreaseRateInSeconds = 5.0f;//Every X seconds, they will lose _baseEnergyLoss amount
     #endregion
 
     private void Start()
     {
-        EnergyBar.maxValue = _maxEnergy;
-        EnergyBar.value = _maxEnergy;
-        InvokeRepeating("EnergyTimer", 0, _decreaseRateInSeconds);
+        EnergyBar.maxValue = MaxEnergy;
+        EnergyBar.value = MaxEnergy;
+        InvokeRepeating("EnergyTimer", 0, DecreaseRateInSeconds);
     }
 
     private void EnergyTimer()
     {
-        DecreaseEnergy(_baseEnergyLoss);
+        DecreaseEnergy(BaseEnergyLoss);
     }
 
     public void IncreaseEnergy(int increase)
@@ -37,10 +37,10 @@ public class EnergyHandler : MonoBehaviour
         _currentEnergy += increase;
         EnergyBar.value += increase;
 
-        if (_currentEnergy > _maxEnergy)
+        if (_currentEnergy > MaxEnergy)
         {
-            _currentEnergy = _maxEnergy;
-            EnergyBar.value = _maxEnergy;
+            _currentEnergy = MaxEnergy;
+            EnergyBar.value = MaxEnergy;
         }
     }
 
@@ -52,7 +52,7 @@ public class EnergyHandler : MonoBehaviour
 
     public void ResetEnergy()
     {
-        _currentEnergy = _maxEnergy;
-        EnergyBar.value = _maxEnergy;
+        _currentEnergy = MaxEnergy;
+        EnergyBar.value = MaxEnergy;
     }
 }

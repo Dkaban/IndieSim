@@ -11,47 +11,41 @@ public class UIHandler : MonoBehaviour
     }
     #endregion
 
-    public Slider energyBar;
+    public Slider EnergyBar;
 
-    public GameObject MakeGameUIObject;
-    public GameObject ChooseGenreUIObject;
-    public GameObject NameGameUIObject;
-    public GameObject PauseMenuUIObject;
+    public GameObject MakeGameUiObject;
+    public GameObject ChooseGenreUiObject;
+    public GameObject NameGameUiObject;
+    public GameObject PauseMenuUiObject;
 
     public void PressSleep()
     {
         EnergyHandler.Instance.ResetEnergy();
     }
 
-    public void PressEat()
-    {
-        HungerHandler.Instance.IncreaseHunger(HungerHandler.Instance.HungerGainFromEating);
-        EnergyHandler.Instance.IncreaseEnergy(HungerHandler.Instance.EnergyGainFromEating);
-    }
-
     public void PressMakeGame()
     {
-        MakeGameUIObject.SetActive(false);
-        ChooseGenreUIObject.SetActive(true);
+        MakeGameUiObject.SetActive(false);
+        ChooseGenreUiObject.SetActive(true);
     }
 
     public void SetEnergy(float val)
     {
-        energyBar.maxValue = val;
-        energyBar.value = energyBar.maxValue;
+        EnergyBar.maxValue = val;
+        EnergyBar.value = EnergyBar.maxValue;
     }
 
     public void ReduceEnergyBar(float value)
     {
-        energyBar.value -= value;
+        EnergyBar.value -= value;
     }
 
     public void IncreaseEnergyBar(float value)
     {
-        energyBar.value += value;
-        if(energyBar.value > energyBar.maxValue)
+        EnergyBar.value += value;
+        if(EnergyBar.value > EnergyBar.maxValue)
         {
-            energyBar.value = energyBar.maxValue;
+            EnergyBar.value = EnergyBar.maxValue;
         }
     }
 }
